@@ -1,0 +1,89 @@
+@font-face { /*Denna font är default i min webläsare, men inte i alla andra. Så jag la till den här*/
+    font-family: 'Vera';
+    src: url('https://marksism.space/webutv/Vera.ttf');
+}
+
+* {
+    margin: 0; /* Detta är för att fixa möjliga problem som kan upstå av margin och padding. Det är enklast at bara stänga av de*/ 
+    padding: 0;
+}
+
+#header { /*Headern ligger längst upp på sidan och är en flexbox*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-image: linear-gradient(to right, #ca00d1ff, #2300ddff);
+    border-radius: 10px;
+    box-shadow: 0 0 15px #313131;
+    margin: 10px;
+
+}
+
+body { /*Height på body är lite konstig, men 100% gör iallafall att den täcker allt om man har*/
+    margin-top: 0px;
+    background-image: linear-gradient(to bottom left, #ca00d1ff, #2300ddff);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+.header_item { /*Headerns margin anpassar sig efter skärm storleken, en av sakerna jag har gjort för att undvika media quaries*/
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: 125%;
+    font-family: 'Vera', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+#marksism { /*Detta är igentligen bara titeln, men jag har inte orkat döpa om den nu*/
+    text-align: center;
+    margin-top: 6vh;
+    color: white;
+    font-family: 'Vera', sans-serif;
+    font-size: 500%;
+}
+
+#flex_thing { /*Denna används så att jag can centrera search_box*/
+    display: flex;
+    justify-content: center;
+}
+
+#search_box { /*Detta är den stora boxen som nästan allt ligger i, te.x resultaten*/
+    width: auto;
+    margin: auto;
+    margin: 10px;
+    padding: 10px;
+    background-image: linear-gradient(to right, #ca00d1ff, #2300ddff);
+    border-radius: 10px;
+    box-shadow: 0 0 15px #313131;
+    height: 100%;
+    margin-bottom: 10px;
+    max-width: 400px;
+}
+
+#search_box_form { /*Detta är själva rutan som man skiver i*/
+    width: 100%;
+    height: 32px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    font-family: 'Vera', sans-serif;
+    margin-bottom: 10px;
+}
+
+#search_results { /*Detta är resultaten*/
+    font-family: 'Vera', sans-serif;
+    font-size: 16px;
+}
+
+#inner_search_box { /*Detta är för fixa den vita lilla rutan*/
+    padding: 10px;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#temprature { /*På sidan väder kan så måste väder texten vara större än all annan text*/
+    font-size: 1000%;
+    text-align: center;
+}
