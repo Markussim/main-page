@@ -7,7 +7,7 @@ function search() {
             myFunction(jsonObj);
         }
     };
-    xhttp.open("GET", "https://search.marksism.space/?limit=10&search=" + document.getElementById('search_box_form').value, true);
+    xhttp.open("GET", "https://search.marksism.space/?limit=8&search=" + document.getElementById('search_box_form').value, true);
     xhttp.send();
 }
 
@@ -25,7 +25,7 @@ function search_onload() {
         url = "";
     }
     document.getElementById("search_box_form").value = url;
-    xhttp.open("GET", "https://search.marksism.space/?limit=10&search=" + url, true);
+    xhttp.open("GET", "https://search.marksism.space/?limit=8&search=" + url, true);
     xhttp.send();
 }
 
