@@ -7,8 +7,18 @@ function search() {
             myFunction(jsonObj);
         }
     };
-    xhttp.open("GET", "https://search.marksism.space/?limit=8&search=" + document.getElementById('search_box_form').value, true);
+    xhttp.open("GET", "https://search.marksism.space/?limit=8&showUnapproved=" + showUnapproved + "&search=" + document.getElementById('search_box_form').value, true);
     xhttp.send();
+}
+
+let showUnapproved = false
+
+function changeApproved() {
+    showUnapproved = document.getElementById('showUnapproved').checked
+
+    console.log(showUnapproved)
+
+    search()
 }
 
 function search_onload() {
@@ -25,7 +35,7 @@ function search_onload() {
         url = "";
     }
     document.getElementById("search_box_form").value = url;
-    xhttp.open("GET", "https://search.marksism.space/?limit=8&search=" + url, true);
+    xhttp.open("GET", "https://search.marksism.space/?limit=8&showUnapproved=" + showUnapproved + "&search=" + url, true);
     xhttp.send();
 }
 
@@ -62,5 +72,3 @@ function myFunction(arr) {
 function getURLParameter(name) {
     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
 }
-
-console.log("Hmm")
